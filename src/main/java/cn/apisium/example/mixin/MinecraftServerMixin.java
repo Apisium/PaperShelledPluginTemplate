@@ -8,8 +8,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = MinecraftServer.class)
-public class MinecraftServerMixin {
-    @Inject(method = "getServerModName", at = @At("RETURN"), cancellable = true)
+public abstract class MinecraftServerMixin {
+    @Inject(method = "getServerModName", at = @At("RETURN"), cancellable = true, remap = false)
     public void getServerModName(CallbackInfoReturnable<String> cir) {
         Data.modName = cir.getReturnValue();
         cir.setReturnValue("PaperShelled");
