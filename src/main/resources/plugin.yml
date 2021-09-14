@@ -1,5 +1,0 @@
-name: ExamplePlugin
-author: Shirasawa
-main: cn.apisium.example.Main
-description: A simple PaperShelled plugin.
-version: @@RELEASE_VERSION@@

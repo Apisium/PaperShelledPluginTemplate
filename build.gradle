@@ -28,8 +28,11 @@ paperShelled {
 dependencies {
     compileOnly paperShelled.jar()
     compileOnly 'org.spongepowered:mixin:0.8.4'
-    compileOnly 'com.github.Apisium:PaperShelled:ebc809e546'
+    compileOnly 'com.github.Apisium:PaperShelled:ddaf6a5d18'
+    compileOnly 'com.github.Apisium:PaperShelledAnnotations:a7326507d3'
     compileOnly 'org.jetbrains:annotations:22.0.0'
+
+    annotationProcessor 'com.github.Apisium:PaperShelledAnnotations:a7326507d3'
 }
 
 shadowJar {
