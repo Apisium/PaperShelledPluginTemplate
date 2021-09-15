@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 buildscript {
     repositories {
         maven { url "https://maven.fabricmc.net/" }
@@ -11,29 +12,23 @@ plugins {
 }
 
 group 'cn.apisium.example'
-version = System.getenv('RELEASE_VERSION') ?: '0.0.0-DEV'
+def releaseVersion = version = System.getenv('RELEASE_VERSION') ?: '0.0.0-DEV'
 
 paperShelled {
     archiveClassifier = ''
     relocateCraftBukkit = false
-    paperShelledVersion = '3298b5d43e'
-    annotationsVersion = 'd0d280eac7'
+    paperShelledVersion = '0.0.0'
+    annotationsVersion = '0.0.0'
     jarUrl = 'https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/257/downloads/paper-1.17.1-257.jar'
 }
 
 shadowJar {
-    dependencies {
-        // noinspection GroovyAssignabilityCheck
-        relocate('org.bukkit.craftbukkit', 'org.bukkit.craftbukkit.' + paperShelled.craftBukkitVersion.get())
-    }
+    relocate('org.bukkit.craftbukkit', 'org.bukkit.craftbukkit.' + paperShelled.craftBukkitVersion.get())
     archiveClassifier.set('')
     minimize()
 
     filesMatching('plugin.yml') {
-        filter {
-            // noinspection GrDeprecatedAPIUsage
-            it.replaceAll('@@RELEASE_VERSION@@', version)
-        }
+        filter { it.replaceAll('@@RELEASE_VERSION@@', releaseVersion) }
     }
 }
 build.dependsOn(shadowJar)

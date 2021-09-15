@@ -1,4 +1,4 @@
-# PaperShelledPluginTemplate
+# PaperShelledPluginTemplate [![Release](https://github.com/Apisium/PaperShelledPluginTemplate/actions/workflows/release.yml/badge.svg)](https://github.com/Apisium/PaperShelledPluginTemplate/actions/workflows/release.yml)
 
 A simple PaperShelled plugin.
 
@@ -13,7 +13,7 @@ You need to modify the following files:
 
 ## Usage
 
-1. Download the [PaperShelledPluginTemplate.jar](https://github.com/Apisium/PaperShelledPluginTemplate/releases/latest/download/PaperShelledPluginTemplate.jar)
+1. Download the [PaperShelledPluginTemplate.jar](https://github.com/Apisium/PaperShelledPluginTemplate/releases/latest)
 2. Put the downloaded jar file into your MineCraft server `PaperShelled/plugins` directory.
 3. Restart your MineCraft server!
 

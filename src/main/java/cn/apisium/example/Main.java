@@ -34,6 +34,8 @@ public class Main extends PaperShelledPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
+        getLogger().info("key: " + getConfig().getString("key"));
         getLogger().info(Data.modName);
         getLogger().info("Biomes: " + AccessorTest.getPOSSIBLE_BIOMES().stream()
                 .map(ResourceKey::toString).collect(Collectors.joining(" ")));
