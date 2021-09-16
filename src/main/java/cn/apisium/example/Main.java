@@ -27,11 +27,9 @@ import java.util.stream.Collectors;
         MinecraftServerMixin.class
 })
 public class Main extends PaperShelledPlugin {
-    public Main(PaperShelledPluginLoader loader, PaperShelledPluginDescription paperShelledDescription,
-                PluginDescriptionFile description, File file) {
+    public Main(PaperShelledPluginLoader loader, PaperShelledPluginDescription paperShelledDescription, PluginDescriptionFile description, File file) {
         super(loader, paperShelledDescription, description, file);
     }
-
     @Override
     public void onEnable() {
         saveDefaultConfig();

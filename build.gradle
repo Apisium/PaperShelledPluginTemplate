@@ -7,7 +7,7 @@ buildscript {
 
 plugins {
     id 'java'
-    id 'cn.apisium.papershelled' version '1.0.7'
+    id 'cn.apisium.papershelled' version '1.0.8'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
@@ -16,17 +16,12 @@ def releaseVersion = version = System.getenv('RELEASE_VERSION') ?: '0.0.0-DEV'
 
 paperShelled {
     archiveClassifier = ''
-    relocateCraftBukkit = false
-    paperShelledVersion = '0.0.0'
-    annotationsVersion = '0.0.0'
     jarUrl = 'https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/257/downloads/paper-1.17.1-257.jar'
 }
 
 shadowJar {
-    relocate('org.bukkit.craftbukkit', 'org.bukkit.craftbukkit.' + paperShelled.craftBukkitVersion.get())
     archiveClassifier.set('')
     minimize()
-
     filesMatching('plugin.yml') {
         filter { it.replaceAll('@@RELEASE_VERSION@@', releaseVersion) }
     }
